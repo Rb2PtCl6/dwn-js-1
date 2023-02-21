@@ -4,7 +4,7 @@ const path=require('path');
 
 
 
-//short https://youtu.be/X2DUpDxFJyg
+//short https://youtu.be/hH6yu19Ui4s
 //full https://www.youtube.com/watch?v=X2DUpDxFJyg
 //music https://music.youtube.com/watch?v=I7RFELL_2dA
 function link_parser(video_link){
