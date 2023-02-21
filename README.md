@@ -3,4 +3,4 @@ Small program which use yt-dlp and ffmpeg to download video from youtube and con
 
 # TODO
 -change way how script get links <br>
--optimize script in some places (extractor, audio_converter
+-optimize script in some places (extractor, audio_converter)
