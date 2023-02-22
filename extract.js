@@ -86,8 +86,11 @@ function audio_converter(video_src,folder){
     });
     action.on("close", code => {
         console.log(`child process exited with code ${code}`);
+        if (!fs.existsSync("result")){
+            fs.mkdirSync("result");
+        }
         fs.unlinkSync(folder+"/"+video_src)
-        fs.copyFileSync(folder+"/"+mp3link,mp3link)
+        fs.copyFileSync(folder+"/"+mp3link,"result/"+mp3link)
         fs.unlinkSync(folder+"/"+mp3link)
     });
 }
@@ -113,8 +116,11 @@ function extractor(video_src,folder){
     });
     action.on("close", code => {
         console.log(`child process exited with code ${code}`);
+        if (!fs.existsSync("result")){
+            fs.mkdirSync("result");
+        }
         fs.unlinkSync(folder+"/"+video_src)
-        fs.copyFileSync(folder+"/"+jpglink,jpglink)
+        fs.copyFileSync(folder+"/"+jpglink,"result/"+jpglink)
         fs.unlinkSync(folder+"/"+jpglink)
     });
 }
