@@ -103,11 +103,11 @@ function isAlredyExist(parsing_result){
 function proc(link){ //code which process video
 var parsing_result=link_parser(link)
 if (parsing_result=="error"){
-    console.log("Your input is not link or your link is incorrect!")
+    console.log(`Your input is not link or your link is incorrect! : ${link}`)
     return
 }
 if (isAlredyExist(parsing_result)){
-    console.log("Mp3 and cover is already downloaded!")
+    console.log(`Mp3 and cover is already downloaded! : ${link}`)
     return
 }
 if (!fs.existsSync(additional_path+"result")){
@@ -118,6 +118,7 @@ downloader(link,parsing_result)
 }
 
 // main
+//var additional_path="";
 var additional_path="C:/Users/path/to/webm-to-mp3/";
 var link_arr=links_from_source()
 for (var j in link_arr){proc(link_arr[j])}
