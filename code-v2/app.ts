@@ -11,7 +11,7 @@ const result = `${additional_path}result`
 function create_directory_if_necessary(names: string[]) {
     for (var i of names) {
         if (!fs.existsSync(i)) {
-            fs.mkdirSync(i);
+            fs.mkdirSync(i)
             console.log(`${i} created!`)
         }
     }
@@ -21,7 +21,7 @@ function get_links_from_source() : string[] {
 }
 
 function is_valid_url(this_url: string): boolean {
-    var res = this_url.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g);
+    var res = this_url.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g)
     return (res !== null)
 }
 
@@ -48,7 +48,7 @@ function parse_link(video_link: string) : ( string | null ) {
 }
 
 function is_alredy_exist(parsing_result : string) : boolean {
-    var files_list = fs.readdirSync(result);
+    var files_list = fs.readdirSync(result)
     for (var i in files_list) {
         if (files_list[i].indexOf(parsing_result) >= 0) {
             return true
@@ -58,7 +58,7 @@ function is_alredy_exist(parsing_result : string) : boolean {
 }
 
 function get_file_name(video_id : string, location: string) : (string | undefined) {
-    var files_list = fs.readdirSync(`${additional_path}${location}`);
+    var files_list = fs.readdirSync(`${additional_path}${location}`)
     for (var i in files_list) {
         if (files_list[i].indexOf(video_id) >= 0) {
             return files_list[i]
@@ -73,7 +73,7 @@ enum accepted_types {
 }
 
 function download_link(type: accepted_types, link: string, parsing_result: string) {
-    var params: string[];
+    var params: string[]
     if (type == accepted_types.audio) {
         params = ["-P", result, "-x", "--audio-format", "mp3", link]
     } else {
@@ -83,17 +83,17 @@ function download_link(type: accepted_types, link: string, parsing_result: strin
     const action = spawn("yt-dlp", params)
     action.stdout.on("data", data => {
         console.log(`stdout: ${data}`)
-    });
+    })
     action.stderr.on("data", data => {
         console.log(`stderr: ${data}`)
-    });
+    })
     action.on('error', (error) => {
         console.log(`error: ${error.message}`)
-    });
+    })
     action.on("close", code => {
         console.log(`child process exited with code ${code}`)
         if (type == accepted_types.video) extrct_link(parsing_result)
-    });
+    })
 }
 
 function extrct_link(parsing_result: string) {
@@ -105,17 +105,17 @@ function extrct_link(parsing_result: string) {
         const action = spawn("ffmpeg", params)
         action.stdout.on("data", data => {
             console.log(`stdout: ${data}`)
-        });
+        })
         action.stderr.on("data", data => {
             console.log(`stderr: ${data}`)
-        });
+        })
         action.on('error', (error) => {
             console.log(`error: ${error.message}`)
-        });
+        })
         action.on("close", code => {
             console.log(`child process exited with code ${code}`)
             fs.unlinkSync(video_name_extended)
-        });
+        })
     }
 }
 
@@ -136,11 +136,10 @@ function process_link(link: string) {
 }
 
 (function () {
-    
     if (!fs.existsSync(source)) {
         console.log("No input data found!")
     } else {
         create_directory_if_necessary([result, video])
         for (var i of get_links_from_source()) { process_link(i) }
     }
-}());
+}())
