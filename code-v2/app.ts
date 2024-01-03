@@ -39,7 +39,7 @@ function parse_link(video_link: string) : ( string | null ) {
         case "youtu.be":
             return (url.pathname).substring(1)
         case "www.youtube.com":
-            return url.searchParams.get("v")
+        case "m.youtube.com":
         case "music.youtube.com":
             return url.searchParams.get("v")
         default:
@@ -121,7 +121,6 @@ function extrct_link(parsing_result: string) {
 
 function process_link(link: string) {
     var parsing_result = parse_link(link)
-
     if (parsing_result === null) {
         console.log(`Your input is not link or your link is incorrect! : ${link}`)
     } else {
@@ -136,10 +135,14 @@ function process_link(link: string) {
 }
 
 (function () {
+    
     if (!fs.existsSync(source)) {
-        console.log("No input data found!")
+        console.log("Txt file 'source.txt' not found!")
     } else {
         create_directory_if_necessary([result, video])
-        for (var i of get_links_from_source()) { process_link(i) }
+        for (var i of get_links_from_source()) {
+            if ((i).slice(0, 3) == "// ") continue
+            process_link(i)
+        }
     }
 }())
