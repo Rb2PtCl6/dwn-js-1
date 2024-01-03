@@ -141,7 +141,7 @@ function process_link(link: string) {
     } else {
         create_directory_if_necessary([result, video])
         for (var i of get_links_from_source()) {
-            if ((i).slice(0, 3) == "// ") continue
+            if (i.slice(0, 3) == "// ") continue
             process_link(i)
         }
     }
