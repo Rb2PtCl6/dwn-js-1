@@ -1,0 +1,3 @@
+https://www.youtube.com/watch?v=lx1Evi-OxQI // - правильная ссылка
+300 // неправильная ссылка так как это число
+// https://www.youtube.com/watch?v=TfMcfDb5Xy0 // - знак комментария (//) обозначает, что ссылка скачана не будет

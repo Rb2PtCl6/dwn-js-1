@@ -1,0 +1,9 @@
+# dwn-js-1
+Small program which use yt-dlp and ffmpeg to download video from youtube and convert it into mp3's cover and mp3 file<br>
+REquare ffmpeg and yt-dlp in path
+
+# TODO
+- add commented link processing in different way ( not using catching error which throw new URL) <br>
+- resize cover's size to 1000x1000 or 700x700 using -vf scale=1000:-1 or -vf scale=700:-1 (is it necassary?) <br>
+# !IMPORTANT! 
+Add https://m.youtube.com/watch?v=xxxxx (https://m.youtube.com/watch?v=p9kRn52_nrc) (mobile youtube domain to parsing process, add this in switch with falling down in switch)<br>
