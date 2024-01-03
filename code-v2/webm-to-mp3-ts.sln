@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "webm-to-mp3-ts", "webm-to-mp3-ts.esproj", "{6ADD23CE-3076-4D2E-A6E9-7B9C6F74E6ED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{F6641BBE-6DCA-4D7B-950A-2E6BD7C79378}"
+	ProjectSection(SolutionItems) = preProject
+		extract-2.txt = extract-2.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6ADD23CE-3076-4D2E-A6E9-7B9C6F74E6ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6ADD23CE-3076-4D2E-A6E9-7B9C6F74E6ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6ADD23CE-3076-4D2E-A6E9-7B9C6F74E6ED}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{6ADD23CE-3076-4D2E-A6E9-7B9C6F74E6ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6ADD23CE-3076-4D2E-A6E9-7B9C6F74E6ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6ADD23CE-3076-4D2E-A6E9-7B9C6F74E6ED}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5B5B8B2F-D96E-4D65-AB00-FC6B93F3A68A}
+	EndGlobalSection
+EndGlobal
