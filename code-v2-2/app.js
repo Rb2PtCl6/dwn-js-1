@@ -102,7 +102,7 @@ function download_link(type, link, parsing_result) {
         params = ["-P", result, "-x", "--audio-format", "mp3", link];
     }
     else {
-        params = ["-P", video, "-f", "bestvideo", link];
+        params = ["-P", video, "-f", "bestvideo", "--download-sections", "*00:00-00:01", link];
     }
     execute_command(commands.yt_dlp, params, parsing_result, type);
 }
